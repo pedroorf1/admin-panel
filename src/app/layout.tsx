@@ -6,7 +6,6 @@ import "./globals.css";
 import { usePathname } from "next/navigation";
 // import { checkIsPublicPath } from "../functions/check-is-public-route";
 import { Header } from "../components/header/Header";
-import { NextAuthProvider } from "../providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,10 +40,8 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${geistSans.variable} ${geistMono.variable} scroll-smooth antialiased`}
       >
-        <NextAuthProvider>
-          <Header />
-          {children}
-        </NextAuthProvider>
+        <Header />
+        {children}
       </body>
     </html>
   );
